@@ -1,0 +1,2 @@
+class WordRootsController < ApplicationController
+end
