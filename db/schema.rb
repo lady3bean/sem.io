@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150406144641) do
+ActiveRecord::Schema.define(version: 20150408000223) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,8 +20,10 @@ ActiveRecord::Schema.define(version: 20150406144641) do
     t.integer  "word_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "root_id"
   end
 
+  add_index "word_roots", ["root_id"], name: "index_word_roots_on_root_id", using: :btree
   add_index "word_roots", ["word_id"], name: "index_word_roots_on_word_id", using: :btree
 
   create_table "words", force: :cascade do |t|

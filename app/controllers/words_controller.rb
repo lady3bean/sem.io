@@ -3,13 +3,13 @@ class WordsController < ApplicationController
   def index
     @words = Word.all
 
-    render json: @words, status: 200, include: ['word_roots']
+    render json: @words, status: 200, include: ['roots', 'rooteds']
   end
 
   def show
     @word = Word.find(params[:id])
 
-    render json: @word, status: 200, include: ['word_roots']
+    render json: @word, status: 200
   end
 
   private
