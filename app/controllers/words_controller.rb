@@ -3,7 +3,7 @@ class WordsController < ApplicationController
   def index
     @words = Word.all
 
-    render json: @words, status: 200, include: ['roots', 'rooteds']
+    render json: @words, status: 200, include: ['roots']
   end
 
   def show
