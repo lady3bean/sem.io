@@ -1,8 +1,10 @@
 class Word < ActiveRecord::Base
   belongs_to :language
 
+  validates :spelling, uniqueness: {scope: :language}
+
   has_many :word_origins
-  has_many :origins, :through => :word_origin, :source => :origin
+  has_many :origins, :through => :word_origins, :source => :origin
 
   has_many :word_origin_children, :class_name => 'WordOrigin', :foreign_key => 'origin_id'
   has_many :origin_ofs, :through => :word_origin_children, :source => :word

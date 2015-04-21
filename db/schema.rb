@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150420234914) do
+ActiveRecord::Schema.define(version: 20150421005041) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -53,6 +53,7 @@ ActiveRecord::Schema.define(version: 20150420234914) do
   end
 
   add_index "words", ["language_id"], name: "index_words_on_language_id", using: :btree
+  add_index "words", ["spelling"], name: "index_words_on_spelling", using: :btree
 
   add_foreign_key "word_derivations", "words"
   add_foreign_key "word_derivations", "words", column: "derived_from_id"
