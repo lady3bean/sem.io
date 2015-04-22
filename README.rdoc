@@ -1,28 +1,16 @@
-== README
+About
+Sem.io is an ongoing effort to mine and organize dictionary data into an efficient database that intrinsically links words to their etymologies with ActiveRecord Associations.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Words have references to their word origins, derivations, and etymological relationships.
 
-Things you may want to cover:
+Words have spellings and ISO language codes that have been indexed with btree for faster lookup.
 
-* Ruby version
+See the rake db:import task in /lib for the code for importing the ISO language code and word data while automatically assigning their relationships. With about 470,000 entries in tsv format, this took about 2 hours on my machine, or O(n2) time in the abstract.
 
-* System dependencies
+Next Steps
+I will soon be deploying to a server so this can be consumed as API.
+Watch https://github.com/lady3bean/semio_frontend for updates on the frontend. I am using d3.js in Angular to build an interactive data visual for users to explore and see the relationships between words. 
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+Resources
+Data is taken from Gerad de Melo’s Etymological Wordnet: http://www1.icsi.berkeley.edu/~demelo/etymwn/. So far, I have imported only the content with English as a language, and any words that those words reference in other languages.
+I am planning to source word definitions from Wordnik’s API: http://developer.wordnik.com and word lemmas and grammar data from LinguaSys’ Linguistic API: https://nlp.linguasys.com/docs/services/
