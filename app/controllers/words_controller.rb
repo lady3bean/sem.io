@@ -1,20 +1,24 @@
 class WordsController < ApplicationController
 
   def index
-    @words = Word.all
+    @words = Word.find_by spelling: params[:spelling]
 
-    render json: @words, status: 200, include: ['roots']
+    if @words
+      render json: @words, status: 200, include: [:origins, :origin_ofs, :relations, :derivations, :derived_froms, :language]
+    else
+      render json: {message: 'no such word in my database. See contact info for how you can contribute to this project!'}, status: 404
+    end
   end
 
   def show
     @word = Word.find(params[:id])
 
-    render json: @word, status: 200
+    render json: @word, status: 200, include: [:origins, :origin_ofs, :relations, :derivations, :derived_froms, :language]
   end
 
   private
   def word_params
-    word_params.require(:word).permit(:spelling, :definition, :word_roots)
+    params.require(:word).permit(:spelling, :definition, :origins, :origin_ofs, :relations, :derivations, :derived_froms, :language)
   end
   
 end
