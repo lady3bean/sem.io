@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 
-gem 'rails', '5.1.5'
+gem 'rails', '5.2'
 
 gem 'spring', :group => :development
 
@@ -10,7 +10,6 @@ gem 'rack-cors'
 gem 'pg'
 
 gem 'listen'
-
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
