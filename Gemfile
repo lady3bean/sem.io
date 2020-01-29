@@ -1,16 +1,15 @@
 source 'https://rubygems.org'
 
 
-gem 'rails', '4.2.0'
+gem 'rails', '5.1.5'
 
-gem 'rails-api'
-
-gem 'spring', '1.3.4', :group => :development
+gem 'spring', :group => :development
 
 gem 'rack-cors'
 
 gem 'pg'
 
+gem 'listen'
 
 
 # To use ActiveModel has_secure_password
