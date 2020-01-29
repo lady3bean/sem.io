@@ -1,4 +1,4 @@
-class Word < ActiveRecord::Base
+class Word < ApplicationRecord
   belongs_to :language
 
   validates :spelling, uniqueness: {scope: :language}
