@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+ruby '2.6.0'
 
 gem 'rails', '6.0.0'
 
@@ -10,6 +11,8 @@ gem 'rack-cors'
 gem 'pg'
 
 gem 'listen'
+
+gem "active_model_serializers", require: true
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
