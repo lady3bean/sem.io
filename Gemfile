@@ -12,7 +12,7 @@ gem 'pg'
 
 gem 'listen'
 
-gem "active_model_serializers", require: true
+gem "active_model_serializers"
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
