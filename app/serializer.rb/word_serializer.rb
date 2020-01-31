@@ -1,3 +1,3 @@
 class WordSerializer < ActiveModel::Serializer
-  attributes :spelling, :definition
+  attributes :spelling, :definition, :origins, :derived_froms, :derivations, :relations
 end
