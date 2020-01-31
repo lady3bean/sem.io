@@ -1,4 +1,4 @@
-class CreateWordRelations < ActiveRecord::Migration
+class CreateWordRelations < ActiveRecord::Migration[4.2]
   def change
     create_table :word_relations do |t|
       t.belongs_to :word, index: true

@@ -1,4 +1,4 @@
-class CreateWordDerivations < ActiveRecord::Migration
+class CreateWordDerivations < ActiveRecord::Migration[4.2]
   def change
     create_table :word_derivations do |t|
       t.belongs_to :word, index: true
